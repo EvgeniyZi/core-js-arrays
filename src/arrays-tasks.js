@@ -105,7 +105,6 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
 function removeFalsyValues(arr) {
-  // const falsy = [false, null, 0, '', undefined, NaN];
   const newArr = arr.filter((element) => {
     let result = false;
     if (
@@ -430,8 +429,13 @@ function getElementByIndices(arr, indices) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  return arr.reduce((acc, value) => {
+    if (!value) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
 }
 
 /**
